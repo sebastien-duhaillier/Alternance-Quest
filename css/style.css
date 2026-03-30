@@ -75,3 +75,54 @@ button:hover {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+/* ===== FEEDBACK ===== */
+
+.feedback {
+  min-height: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.feedback.success {
+  color: #22c55e;
+}
+
+.feedback.error {
+  color: #ef4444;
+}
+
+/* ===== BOUTONS REPONSES ===== */
+
+.answers button {
+  width: 100%;
+  text-align: left;
+}
+
+.answers button:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.answers button.correct {
+  background-color: #166534;
+  border-color: #22c55e;
+  color: #f8fafc;
+}
+
+.answers button.wrong {
+  background-color: #991b1b;
+  border-color: #ef4444;
+  color: #f8fafc;
+}
+.progress {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #22c55e;
+  width: 0%;
+}
