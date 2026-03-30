@@ -1,0 +1,38 @@
+/* Josh Comeau’s CSS Reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+  height: 100%;
+}
+/* Typographie plus lisible */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Médias propres */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Héritage des fonts pour les inputs */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Empêche le texte de déborder */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}

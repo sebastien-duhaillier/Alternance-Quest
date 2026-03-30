@@ -1,0 +1,77 @@
+/* ===== BASE ===== */
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== CONTAINER ===== */
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== TITRE ===== */
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* ===== SCENE ===== */
+
+.scene {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== QUESTION ===== */
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* ===== REPONSES ===== */
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== BOUTONS ===== */
+
+button {
+  padding: 12px;
+  background-color: #334155;
+  color: #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #475569;
+}
+
+/* ===== STATUS / INFO ===== */
+
+.status {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
