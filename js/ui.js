@@ -1,3 +1,8 @@
+function setSceneBackground(theme) {
+  const imagePath = `./assets/images/${theme}.jpg`;
+  document.body.style.backgroundImage = `url("${imagePath}")`;
+}
+
 function renderScene(
   scene,
   question,
@@ -24,6 +29,8 @@ function renderScene(
     `;
     return;
   }
+
+  setSceneBackground(scene.theme);
 
   app.innerHTML = `
     <h1>Alternance Quest</h1>
@@ -97,6 +104,8 @@ function renderEndScreen(win, score) {
     console.error("Élément #app introuvable dans le HTML.");
     return;
   }
+
+  document.body.style.backgroundImage = `url("./assets/images/end-screen.jpg")`;
 
   app.innerHTML = `
     <h1>${win ? "🎉 Contrat obtenu !" : "💀 Échec..."}</h1>

@@ -2,12 +2,16 @@ let currentSceneIndex = 0;
 let score = 0;
 let lives = 3;
 
+// Choisit une série aléatoire au lancement
+const selectedQuestionSet =
+  questionSets[Math.floor(Math.random() * questionSets.length)];
+
 function getCurrentScene() {
   return scenes[currentSceneIndex];
 }
 
-function getQuestionById(questionId) {
-  return questions.find((question) => question.id === questionId);
+function getQuestionForCurrentScene() {
+  return selectedQuestionSet[currentSceneIndex];
 }
 
 function loadScene() {
@@ -18,10 +22,10 @@ function loadScene() {
     return;
   }
 
-  const question = getQuestionById(scene.questionId);
+  const question = getQuestionForCurrentScene();
 
   if (!question) {
-    console.error(`Question introuvable pour questionId: ${scene.questionId}`);
+    console.error(`Question introuvable pour la scène index: ${currentSceneIndex}`);
     renderEndScreen(false, score);
     return;
   }

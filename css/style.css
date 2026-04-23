@@ -8,6 +8,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* ===== CONTAINER ===== */
@@ -20,6 +26,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== TITRE ===== */
@@ -27,15 +36,34 @@ body {
 h1 {
   text-align: center;
   font-size: 1.8rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== SCENE ===== */
 
 .scene {
-  background-color: #1e293b;
+  background-color: rgba(30, 41, 59, 0.88);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== TITRES / DESCRIPTIONS ===== */
+
+.scene-title {
+  margin-bottom: 10px;
+}
+
+.scene-description {
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.boss-warning {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #facc15;
 }
 
 /* ===== QUESTION ===== */
@@ -62,6 +90,7 @@ button {
   border-radius: 8px;
   border: 1px solid #475569;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 button:hover {
@@ -73,14 +102,17 @@ button:hover {
 .status {
   text-align: center;
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
+
 /* ===== FEEDBACK ===== */
 
 .feedback {
   min-height: 24px;
   text-align: center;
   font-weight: 600;
+  margin-top: 12px;
 }
 
 .feedback.success {
@@ -114,9 +146,12 @@ button:hover {
   border-color: #ef4444;
   color: #f8fafc;
 }
+
+/* ===== PROGRESSION ===== */
+
 .progress {
   height: 8px;
-  background: #1e293b;
+  background: rgba(30, 41, 59, 0.9);
   border-radius: 5px;
   overflow: hidden;
 }
