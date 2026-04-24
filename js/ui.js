@@ -105,7 +105,9 @@ function renderEndScreen(win, score) {
     return;
   }
 
-  document.body.style.backgroundImage = `url("./assets/images/end-screen.jpg")`;
+  document.body.style.backgroundImage = win
+    ? `url("./assets/images/win.jpg")`
+    : `url("./assets/images/street.jpg")`;
 
   app.innerHTML = `
     <h1>${win ? "🎉 Contrat obtenu !" : "💀 Échec..."}</h1>
@@ -113,12 +115,14 @@ function renderEndScreen(win, score) {
     <section class="scene">
       <p class="question end-message"></p>
 
+      ${win ? '<img class="end-image" src="./assets/images/win.jpg" alt="Victoire dans Alternance Quest" />' : ""}
+
       <div class="answers">
         <button type="button" id="restart-btn">Rejouer</button>
       </div>
     </section>
 
-    <p class="status">Score final : ${score}</p>
+    <p class="status">Score final : <span class="final-score-value">${score}</span></p>
   `;
 
   const endMessage = app.querySelector(".end-message");

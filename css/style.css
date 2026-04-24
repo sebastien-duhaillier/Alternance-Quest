@@ -161,3 +161,19 @@ button:hover {
   background: #22c55e;
   width: 0%;
 }
+
+/* ===== FIN DE PARTIE ===== */
+
+.end-image {
+  display: block;
+  width: min(100%, 440px);
+  margin: 0 auto 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.35);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.55);
+}
+
+.final-score-value {
+  color: #ef4444;
+  font-weight: 700;
+}
