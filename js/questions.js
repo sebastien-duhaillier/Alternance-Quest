@@ -338,3 +338,69 @@ const questionSets = [
     }
   ]
 ];
+const levelTwoQuestionSets = [
+  [
+    {
+      id: 1,
+      category: "api-rest",
+      question: "Pour une API REST, quelle méthode HTTP sert généralement à récupérer des données ?",
+      choices: ["GET", "POST", "DELETE"],
+      correctAnswer: 0
+    },
+    {
+      id: 2,
+      category: "pro",
+      question: "Face à la secrétaire du client, quelle attitude est la plus professionnelle ?",
+      choices: [
+        "Expliquer calmement le rendez-vous et avec qui tu viens",
+        "Forcer le passage car tu es avec un développeur",
+        "Dire que tu ne sais pas pourquoi tu es là"
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 3,
+      category: "mcd",
+      question: "Dans un MCD, une entité représente généralement quoi ?",
+      choices: [
+        "Un objet important du métier, comme Client ou Commande",
+        "Une couleur CSS",
+        "Une route JavaScript"
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 4,
+      category: "analyse",
+      question: "Après un rendez-vous client, que faut-il faire avant de coder ?",
+      choices: [
+        "Reformuler le besoin et vérifier qu’on a bien compris",
+        "Coder directement au hasard",
+        "Créer toutes les tables possibles"
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 5,
+      category: "api-rest",
+      question: "Quelle route REST est la plus cohérente pour récupérer la liste des clients ?",
+      choices: [
+        "GET /clients",
+        "POST /delete-client",
+        "CSS /clients"
+      ],
+      correctAnswer: 0
+    },
+    {
+      id: 6,
+      category: "pro",
+      question: "Pendant la présentation client, qu’est-ce qui est le plus crédible ?",
+      choices: [
+        "Présenter une solution simple, claire et liée au besoin",
+        "Utiliser beaucoup de mots techniques pour impressionner",
+        "Cacher les limites du projet"
+      ],
+      correctAnswer: 0
+    }
+  ]
+];

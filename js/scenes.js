@@ -1,4 +1,4 @@
-const scenes = [
+const levelOneScenes = [
   {
     id: 1,
     name: "La rue du doute",
@@ -58,5 +58,44 @@ const scenes = [
     name: "Le boss final",
     description: "Dernière étape : le recruteur veut voir si tu es prêt pour l'alternance.",
     theme: "final-boss"
+  }
+];
+
+const levelTwoScenes = [
+  {
+    id: 1,
+    name: "Le trajet vers le rendez-vous client",
+    description: "Première mission après embauche. Tu pars rencontrer le client avec ton lead developer.",
+    theme: "client-trip"
+  },
+  {
+    id: 2,
+    name: "Le passage devant la secrétaire",
+    description: "Avant le rendez-vous, tu dois expliquer clairement pourquoi tu es là.",
+    theme: "secretary"
+  },
+  {
+    id: 3,
+    name: "Le rendez-vous client",
+    description: "Le client décrit son besoin. Tu dois commencer à penser modèle de données.",
+    theme: "client-meeting"
+  },
+  {
+    id: 4,
+    name: "Retour vers le lead developer",
+    description: "Tu dois reformuler le besoin client sans inventer ce qui n’a pas été dit.",
+    theme: "lead-dev"
+  },
+  {
+    id: 5,
+    name: "La conception du projet",
+    description: "Tu prépares les bases de l’API REST et du modèle de données.",
+    theme: "project-design"
+  },
+  {
+    id: 6,
+    name: "Présentation devant le client",
+    description: "Tu présentes ta solution. Si tu réussis, ta période d’essai est validée.",
+    theme: "client-presentation"
   }
 ];

@@ -1,24 +1,36 @@
 let currentSceneIndex = 0;
 let score = 0;
 let lives = 3;
+let currentLevel = 1;
 
-// Choisit une série aléatoire au lancement
 const selectedQuestionSet =
   questionSets[Math.floor(Math.random() * questionSets.length)];
 
+const selectedLevelTwoQuestionSet =
+  levelTwoQuestionSets[Math.floor(Math.random() * levelTwoQuestionSets.length)];
+
+function getCurrentScenes() {
+  return currentLevel === 1 ? levelOneScenes : levelTwoScenes;
+}
+
+function getCurrentQuestions() {
+  return currentLevel === 1 ? selectedQuestionSet : selectedLevelTwoQuestionSet;
+}
+
 function getCurrentScene() {
-  return scenes[currentSceneIndex];
+  return getCurrentScenes()[currentSceneIndex];
 }
 
 function getQuestionForCurrentScene() {
-  return selectedQuestionSet[currentSceneIndex];
+  return getCurrentQuestions()[currentSceneIndex];
 }
 
 function loadScene() {
+  const scenes = getCurrentScenes();
   const scene = getCurrentScene();
 
   if (!scene) {
-    renderEndScreen(true, score);
+    renderEndScreen(true, score, currentLevel);
     return;
   }
 
@@ -26,7 +38,7 @@ function loadScene() {
 
   if (!question) {
     console.error(`Question introuvable pour la scène index: ${currentSceneIndex}`);
-    renderEndScreen(false, score);
+    renderEndScreen(false, score, currentLevel);
     return;
   }
 
@@ -45,6 +57,13 @@ function loadScene() {
   bindAnswerEvents(question, isFinalScene);
 }
 
+function startLevelTwo() {
+  currentLevel = 2;
+  currentSceneIndex = 0;
+  lives = 3;
+  loadScene();
+}
+
 function bindAnswerEvents(question, isFinalScene) {
   const buttons = document.querySelectorAll(".answers button");
 
@@ -56,17 +75,14 @@ function bindAnswerEvents(question, isFinalScene) {
 
       if (selectedIndex === question.correctAnswer) {
         markAnswer(button, "correct");
-        showFeedback(
-          isFinalScene ? "🎉 Entretien réussi !" : "Bonne réponse !",
-          "success"
-        );
+        showFeedback("Bonne réponse !", "success");
         score++;
 
         setTimeout(() => {
           currentSceneIndex++;
 
-          if (currentSceneIndex >= scenes.length) {
-            renderEndScreen(true, score);
+          if (currentSceneIndex >= getCurrentScenes().length) {
+            renderEndScreen(true, score, currentLevel);
           } else {
             loadScene();
           }
@@ -78,7 +94,7 @@ function bindAnswerEvents(question, isFinalScene) {
 
         setTimeout(() => {
           if (lives <= 0) {
-            renderEndScreen(false, score);
+            renderEndScreen(false, score, currentLevel);
           } else {
             loadScene();
           }
