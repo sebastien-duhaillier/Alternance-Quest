@@ -5,7 +5,7 @@
 Alternance Quest est un mini jeu web interactif dans lequel le joueur incarne un candidat à la recherche d’une alternance en développement web.
 
 Le joueur progresse à travers différents environnements en répondant à des questions techniques et professionnelles, jusqu’au boss final : le recruteur.
-
+Mais ce n'est que le début ...
 ---
 
 ## 🎯 Objectifs
